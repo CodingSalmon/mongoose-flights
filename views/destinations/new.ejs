@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <title>Mongoose Flights - Add Destination</title>
+    </head>
+    <body>
+        <%- include('../partials/navbar') %>
+        <h1>Add Destination</h1>
+        <form action="/destinations" method="POST">
+            Airport: <input name='airport' pattern='[A-Z][A-Z][A-Z]' placeholder='Airport Code'/>
+            <button type="submit">Add Destination</button>
+        </form>
+    </body>
+</html>

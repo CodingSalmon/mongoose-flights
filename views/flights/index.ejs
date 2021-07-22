@@ -4,13 +4,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel='stylesheet' href='/stylesheets/style.css' />
-        <title>Mongoose Flights- All Flights</title>
+        <title>Mongoose Flights - All Flights</title>
     </head>
-
     <body>
-        <a href="/">HOME</a>
+        <%- include('../partials/navbar') %>
         <h1>Mongoose Flights</h1>
-        <a href="/flights/new">ADD FLIGHT</a>
+        <% if (flights.length) { %>
         <table>
             <thead>
                 <tr>
@@ -32,5 +31,8 @@
                 <% }); %>
             </tbody>
         </table>
+        <% } else { %>
+            <p>No Flights Yet</p>
+        <% } %>
     </body>
 </html>

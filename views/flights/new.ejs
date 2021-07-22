@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>Mongoose Flights- Add Flight</title>
-<body>
-    <a href="/">HOME</a>
-    |
-    <a href="/flights">ALL FLIGHTS</a>
-    <h1>Add Flight</h1>
-    <form action="/flights" method="POST">
-        <select name="airline">
-            <option value="American">American</option>
-            <option value="Southwest">Southwest</option>
-            <option value="United">United</option>
-        </select>
-        <select name="airport">
-            <option value="AUS">AUS</option>
-            <option selected value="DEN">DEN</option>
-            <option value="DFW">DFW</option>
-            <option value="LAX">LAX</option>
-            <option value="SAN">SAN</option>
-        </select>
-        <input type="number" name="flightNo" min="10" max="9999">
-        <button type="submit">Add Flight</button>
-    </form>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <title>Mongoose Flights - Add Flight</title>
+    <body>
+        <%- include('../partials/navbar') %>
+        <h1>Add Flight</h1>
+        <form action="/flights" method="POST">
+            Airline: <select name="airline">
+                <option value="American">American</option>
+                <option value="Southwest">Southwest</option>
+                <option value="United">United</option>
+            </select>
+            Airport: <select name="airport">
+                <option value="AUS">AUS</option>
+                <option value="DEN" selected>DEN</option>
+                <option value="DFW">DFW</option>
+                <option value="LAX">LAX</option>
+                <option value="SAN">SAN</option>
+            </select>
+            Flight Number: <input type="number" name="flightNo" min="10" max="9999" required/>
+            <br>
+            Departs: <input type="datetime-local" name='departs' min='<%= today %>' max=""/>
+            <br>
+            <button type="submit">Add Flight</button>
+        </form>
+    </body>
 </html>
